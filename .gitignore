@@ -1,0 +1,17 @@
+# Virtual environment
+pdf/
+
+# FAISS index
+train/faiss_index/
+
+# PDF data files
+data/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Environment variables
+.env
