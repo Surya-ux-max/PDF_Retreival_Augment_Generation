@@ -67,8 +67,29 @@ Run all cells. This creates `train/faiss_index/` with `index.faiss` and `index.p
 
 ### 5. Run the app
 
-```bash
-python app.py
+**Option A — Web UI (recommended)**
+
+Open two terminals from the project root (`PDF_Retreival_Augment_Generation`):
+
+```powershell
+# Terminal 1 — API server
+pdf\Scripts\python.exe -m uvicorn api:app --reload
+```
+
+```powershell
+# Terminal 2 — Frontend
+cd client
+npm run dev
+```
+
+Then open [http://localhost:5173](http://localhost:5173).
+
+> **Why `pdf\Scripts\python.exe`?** The `pdf` venv was originally created in a different folder, so the `uvicorn.exe` and `pip.exe` stubs inside `pdf\Scripts\` have a stale path baked in. Calling the venv's `python.exe` directly bypasses those broken stubs and works reliably every time.
+
+**Option B — CLI only**
+
+```powershell
+pdf\Scripts\python.exe app.py
 ```
 
 ```
